@@ -1,8 +1,8 @@
-import AppBar from '@material-ui/core/AppBar';
+import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
-import React from 'react';
+import AppBar from '@material-ui/core/AppBar';
 import { useHistory } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
@@ -20,15 +20,15 @@ const useStyles = makeStyles((theme) => ({
 
 const NavBar = () => {
     const classes = useStyles();
-    let history = useHistory();
+    const history = useHistory();
 
-    const goToPage = (pageName) => {
-        history.push(`${pageName}`)
-    }
+    // const goToPage = (pageName) => {
+    //     history.push(`${pageName}`)
+    // }
     return (
         <AppBar position="static">
             <Toolbar>
-                <Typography variant="h6" onClick={() => goToPage('home')} className={classes.title}>
+                <Typography variant="h6" onClick={() => history.push('/home')} className={classes.title}>
                     Home
                 </Typography>
             </Toolbar>
